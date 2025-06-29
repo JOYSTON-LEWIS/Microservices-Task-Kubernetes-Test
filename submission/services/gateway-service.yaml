@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-service
+spec:
+  selector:
+    app: gateway-service
+  ports:
+    - port: 3003
+      targetPort: 3003
+      nodePort: 32003  # Optional: can be any value between 30000-32767
+  type: NodePort
